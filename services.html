@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="https://wa.me/923101576630" target="_blank" id="whatsapp-btn">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+  </a>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <span class="logo">GP</span>
+        <span>Global Pathways</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#countries">Countries</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="cta">
+        <a class="btn" href="#contact">Free Evaluation</a>
+        <a class="btn primary" href="#contact">Book a Call</a>
+      </div>
+    </div>
+  </header>
+      <!-- Services -->
+  <section id="services"
+    style="background: #a5bd73;">
+       <div class="custom-shape-divider-bottom-1757745370">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,10 C450,120,750,0,900,10 C1300,90,1350,80,1500,0 V0 H0 Z" fill="#000000" class="shape-fill">
+          </path>
+        </svg>
+      </div>
+    <div class="container">
+      <div class="section-head">
+        <h2>What we do</h2>
+        <p class="muted">Everything you need from shortlisting to visa stamping.</p>
+      </div>
+      <div class="grid cols-4">
+        <article class="card reveal">
+          <div class="icon">🧭</div>
+          <h3>Course & Country Guidance</h3>
+          <p class="muted">We map your profile to the best‑fit programs, intake and locations based on goals and budget.
+          </p>
+        </article>
+        <article class="card reveal">
+          <div class="icon">📝</div>
+          <h3>Application Strategy</h3>
+          <p class="muted">SOP, LOR, CV polishing + portal submissions with deadlines tracked for you.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon">💸</div>
+          <h3>Scholarships</h3>
+          <p class="muted">Targeted scholarships and fee waivers based on merit, need, and university ties.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon">🛂</div>
+          <h3>Visa & Interview</h3>
+          <p class="muted">Financial docs checklist, mock interviews, and visa filing—end to end.</p>
+        </article>
+      </div>
+    </div>
+    <div class="container">
+      <div class="section-head">
+        <h2>Top Study Destinations</h2>
+        <p class="muted">Hand‑picked universities where our students thrive.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="country reveal">
+          <div class="top">
+            <div class="row"><span class="flag">🇬🇧</span><strong>NewZealand</strong></div>
+            <span class="pill">1‑year Masters</span>
+          </div>
+          <div class="body">High ROI programs, PSW route, strong business & STEM schools.</div>
+          <div class="cta"><span class="muted">Intakes: Jan • Sep</span><a class="btn" href="#contact">Enquire</a></div>
+        </div>
+        <img src="images/Flag_of_New_Zealand.svg.png" alt="NewZealand fla" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" style="background: linear-gradient(181deg, rgb(32 45 93 / 82%), rgb(16 37 75 / 99%));">
+    <div class="container">
+      <div class="section-head">
+        <h2>How it works</h2>
+        <p class="muted">Four clear steps from eligibility to arrival.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="icon">🧭</div>
+          <h3>Profile Evaluation</h3>
+          <p class="muted">Share academics, tests, budget and deadlines. We assess options within 24–48 hrs.</p>
+        </div>
+        <div class="step reveal">
+          <div class="icon">📝</div>
+          <h3>Shortlist & Docs</h3>
+          <p class="muted">Get a custom shortlist + SOP/LOR/CV templates and editing support.</p>
+        </div>
+        <div class="step reveal">
+          <div class="icon">💸</div>
+          <h3>Apply & Track</h3>
+          <p class="muted">We submit and track applications, arrange interviews, and chase decisions.</p>
+        </div>
+        <div class="step reveal">
+          <div class="icon">🛂</div>
+          <h3>Visa & Fly</h3>
+          <p class="muted">Financials, CAS/I‑20, visa filing, pre‑departure and accommodation help.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Testimonials -->
+  <section id="testimonials"
+    style="background:linear-gradient(181deg, rgb(115 128 175 / 82%), rgb(110 126 155 / 99%)); display: flex; flex-direction: column; gap: 7rem;">
+    <div class="container testimonials">
+      <div class="card reveal">
+        <div class="icon">⭐</div>
+        <p class="quote">“Global Pathways made my New Zealand Masters journey effortless. Got scholarship + visa in one
+          go. Their
+          SOP edits were game‑changers.”</p>
+        <div class="person">
+          <div class="avatar"></div>
+          <div>
+            <strong>Iqra Khan</strong>
+            <div class="muted" style="font-size: 12px;">MSc Data Science, University of Glasgow</div>
+          </div>
+        </div>
+      </div>
+      <div class="grid cols-1">
+        <div class="card reveal">
+          <div class="row" style="justify-content: space-between;">
+            <div>
+              <div style="font-size:32px; font-weight:800;">95%</div>
+              <div class="muted">Visa guidance satisfaction</div>
+            </div>
+            <div>
+              <div style="font-size:32px; font-weight:800;">1200+</div>
+              <div class="muted">Admits last intake</div>
+            </div>
+            <div>
+              <div style="font-size:32px; font-weight:800;">50+</div>
+              <div class="muted">Partner universities</div>
+            </div>
+          </div>
+          <div class="spacer"></div>
+          <div class="row" style="gap:8px; flex-wrap:wrap;">
+            <span class="badge">Top SOP support</span>
+            <span class="badge">Transparent pricing</span>
+            <span class="badge">Scholarship guidance</span>
+            <span class="badge">Mock interviews</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="section-head">
+        <h2 style="color:#041f5d">FAQs</h2>
+        <p class="muted" style="color:#041f5d">Quick answers before we talk.</p>
+      </div>
+      <div class="faq">
+        <div class="accordion reveal">
+          <div class="acc-head">
+            <h3>Do you charge for the first consultation?</h3><span>+</span>
+          </div>
+          <div class="acc-body">No, the initial profile evaluation and consultation are free. We'll only suggest paid
+            plans if you choose our full service.</div>
+        </div>
+        <div class="accordion reveal">
+          <div class="acc-head">
+            <h3>Can you help with scholarships?</h3><span>+</span>
+          </div>
+          <div class="acc-body">Yes. We shortlist university and external scholarships, and tailor your SOP/CV to
+            improve your chances.</div>
+        </div>
+        <div class="accordion reveal">
+          <div class="acc-head">
+            <h3>What intakes do you support?</h3><span>+</span>
+          </div>
+          <div class="acc-body">Major intakes: Jan/Feb, May/Jul, Sep. We'll align your plan with realistic timelines.
+          </div>
+        </div>
+        <div class="accordion reveal">
+          <div class="acc-head">
+            <h3>Do you help with visas and accommodation?</h3><span>+</span>
+          </div>
+          <div class="acc-body">Absolutely. From financial docs to visa filing, plus pre‑departure and accommodation
+            assistance.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+   <footer style="background: linear-gradient(181deg, rgb(32 45 93 / 82%), rgb(16 37 75 / 99%))">
+    <div class="container row" style="justify-content: space-between;">
+      <div>© <span id="year"></span> Global Pathways Consultancy</div>
+      <div class="row" style="gap: 8px;">
+        <a class="badge" href="#">Privacy</a>
+        <a class="badge" href="#">Terms</a>
+        <a class="badge" href="#">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

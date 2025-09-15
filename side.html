@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Slider</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            background-color: #0f1a30;
+        }
+
+        .hero-slider {
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            padding: 60px 8%;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            opacity: 0;
+            transform: translateX(100%);
+            z-index: 0;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            z-index: 1;
+        }
+
+        .slide-content h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+
+        .slide-content p {
+            font-size: clamp(16px, 1.2vw, 18px);
+            max-width: 50ch;
+            margin-bottom: 24px;
+            color: #e0e0e0;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .btn.primary {
+            background-color: #6ae3ff;
+            color: #041f5d;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .slide-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .slide {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 40px 5%;
+            }
+
+            .slide-image {
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero-slider">
+        <!-- Slide 1 -->
+        <div class="slide active" style="background: linear-gradient(to bottom right, #041f5d, #4c628d)">
+            <div class="slide-content">
+                <h1>Your <span style="color:#6ae3ff;">Offer Letter</span> is closer than you think.</h1>
+                <p>We help students secure admissions, scholarships, and visas to top universities abroad. Transparent
+                    process, fast timelines, and full support.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn primary">Get Free Profile Review</a>
+                    <a href="#services" class="btn">Explore Services</a>
+                </div>
+            </div>
+            <div class="slide-image">
+                <img src="images/girl-lights.png" alt="Student Abroad" />
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" style="background: linear-gradient(to bottom right, #0a1324, #0f1a30)">
+            <div class="slide-content">
+                <h1><span style="color:#a8ff78;">12,000+ Applications</span> Processed with Care</h1>
+                <p>Join thousands of successful students. 95% visa satisfaction and personalized counselling that works.
+                </p>
+                <div class="hero-actions">
+                    <a href="#testimonials" class="btn primary">See Success Stories</a>
+                    <a href="#services" class="btn">Our Services</a>
+                </div>
+            </div>
+            <div class="slide-image">
+                <img src="images/study-abroad-2.png" alt="Success Story" />
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" style="background: linear-gradient(to bottom right, #132743, #041f5d)">
+            <div class="slide-content">
+                <h1><span style="color:#ffc107;">Free Consultation</span> for All Students</h1>
+                <p>Get expert guidance with no upfront fees. We’re with you from choosing the university to boarding
+                    your flight.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn primary">Book Now</a>
+                    <a href="#faq" class="btn">Got Questions?</a>
+                </div>
+            </div>
+            <div class="slide-image">
+                <img src="images/student-3.png" alt="Free Counseling" />
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Auto-slide every 6 seconds
+        setInterval(showNextSlide, 6000);
+    </script>
+
+</body>
+
+</html>
