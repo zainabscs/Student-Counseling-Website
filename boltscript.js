@@ -522,15 +522,21 @@ hamburger.addEventListener('click', () => {
 
 const form = document.getElementById("contact-form");
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
 
-      const res = await fetch("http://localhost:4000/submit-form", {
-        method: "POST",
-        body: formData
-      });
-
-      const data = await res.json();
-      alert(data.message);
+  try {
+    const res = await fetch("/api/submit-form", { // ✅ change URL to relative path
+      method: "POST",
+      body: formData
     });
+
+    const data = await res.json();
+    alert(data.message);
+  } catch (err) {
+    console.error("Error submitting form:", err);
+    alert("Something went wrong. Please try again later.");
+  }
+});
+
