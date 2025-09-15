@@ -1,52 +1,19 @@
-import express from "express";
-import cors from "cors";
-import multer from "multer";
 import nodemailer from "nodemailer";
-import dotenv from "dotenv";
 
-dotenv.config(); // load .env variables
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ message: "Method not allowed" });
+  }
 
-const app = express();
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// You can leave this in case you want to add file uploads later
-const upload = multer({ dest: "uploads/", limits: { files: 10 } });
-
-app.post("/submit-form", upload.none(), async (req, res) => {
   try {
     const {
-      name,
-      email,
-      phone,
-      city,
-      year_of_passing,
-      qualification,
-      ielts,
-      country,
-      budget,
-      message
+      name, email, phone, city, year_of_passing, qualification, ielts, country, budget, message
     } = req.body;
-
-    console.log("✅ Form Submission Received:");
-    console.log({
-      name,
-      email,
-      phone,
-      city,
-      year_of_passing,
-      qualification,
-      ielts,
-      country,
-      budget,
-      message
-    });
 
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 465,
-      secure: true, // SSL
+      secure: true,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -61,38 +28,26 @@ app.post("/submit-form", upload.none(), async (req, res) => {
       text: `
 A new profile evaluation request has been submitted:
 
-👤 Name: ${name}
-📧 Email: ${email}
-📱 Phone / WhatsApp: ${phone}
-🏙️ City: ${city}
-🎓 Qualification: ${qualification}
-🎓 Year of Passing: ${year_of_passing}
-📝 IELTS / PTE Score: ${ielts}
-🌍 Preferred Country: ${country}
-💰 Budget (PKR): ${budget}
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+City: ${city}
+Qualification: ${qualification}
+Year of Passing: ${year_of_passing}
+IELTS / PTE Score: ${ielts}
+Preferred Country: ${country}
+Budget (PKR): ${budget}
 
-📝 Message:
+Message:
 ${message}
-
--- End of Submission --
       `,
     };
 
     await transporter.sendMail(mailOptions);
 
-    res.json({
-      success: true,
-      message: "Form submitted successfully and email sent!",
-    });
+    res.status(200).json({ success: true, message: "Form submitted and email sent!" });
   } catch (err) {
-    console.error("❌ Error sending email:", err);
-    res.status(500).json({
-      success: false,
-      message: "Server error, email not sent.",
-    });
+    console.error(err);
+    res.status(500).json({ success: false, message: "Server error, email not sent." });
   }
-});
-
-app.listen(4000, () => {
-  console.log("🚀 Server running at http://localhost:4000");
-});
+}
